@@ -29,6 +29,9 @@ blog:
     {{/each}}
 
 <div class="main full">
+
+    {{> components/custom/home/car-banner}}
+
     {{#if products.featured}}
         {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
     {{/if}}
@@ -43,6 +46,9 @@ blog:
         {{> components/products/new products=products.new columns=theme_settings.homepage_new_products_column_count}}
     {{/if}}
     {{{region name="home_below_new_products"}}}
+
+    {{> components/custom/home/release-banner}}
+
 </div>
 {{/partial}}
 {{> layout/base}}
