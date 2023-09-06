@@ -14,9 +14,9 @@
 // -----------------------------------------------------------------------------
 
 .footer {
-    background-color: $footer-background;
+    background-color: #D9D9D9;
     border-top: container("border");
-    padding: spacing("double") 0;
+    padding: 30px 0 16px;
     position: relative;
     transform: translateZ(0); // 3
 }
@@ -67,7 +67,7 @@
 
 .footer-info-col--small {
     @include breakpoint("medium") {
-        width: width("2/12");
+        width: width("3/12");
     }
 }
 
@@ -101,9 +101,13 @@
 // -----------------------------------------------------------------------------
 
 .footer-info-heading {
-    color: $footer-heading-fontColor;
-    font-size: fontSize("base");
-    text-transform: inherit;
+    font-family: Playfair Display;
+    color: black;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .footer-info-list {
@@ -113,6 +117,10 @@
     a {
         color: stencilColor("color-textSecondary");
         text-decoration: none;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 140%;
+        text-transform: uppercase;
 
         &:hover {
             color: stencilColor("color-textSecondary--hover");
@@ -121,32 +129,29 @@
 }
 
 .footer-copyright {
+    margin: 0 auto;
     text-align: center;
+    color: #000;
+    width: 70%;
 
-    @include breakpoint("small") {
-        text-align: left;
+    &--title {
+        font-family: Playfair Display;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 140%;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-bottom: 8px;
     }
 
-    > .powered-by {
-        color: stencilColor("color-textSecondary");
-        font-size: fontSize("tiny");
-        margin: 0;
+    &--description {
+        text-align: center;
+        font-size: 8px;
+        font-weight: 400;
+        line-height: 140%;
+        margin-bottom: 0;
     }
 
-    > .paypal-credit {
-        color: stencilColor("color-textSecondary");
-        font-size: fontSize("tiny");
-        margin: 1em 0 2em;
-    }
-
-    a {
-        color: stencilColor("color-textSecondary");
-        text-decoration: none;
-
-        &:hover {
-            color: stencilColor("color-textSecondary--hover");
-        }
-    }
 }
 
 .footer-payment-icons {
@@ -171,4 +176,23 @@
 
 .footer-newsletter-summary {
     text-align: left;
+}
+
+.footer-logo-banner {
+    margin: 0 auto;
+    text-align: center;
+    background-color: #2F241D;
+    color: white;
+    padding: 20px 0;
+    margin-top: 0 !important;
+
+    &__copyright, &__disclaimer {
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%;
+        margin: 8px 0;
+    }
+
+
 }

@@ -30,12 +30,14 @@ blog:
 
 <div class="main full">
 
-    {{> components/custom/home/car-banner}}
 
     {{#if products.featured}}
         {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
     {{/if}}
     {{{region name="home_below_featured_products"}}}
+
+    {{> components/custom/home/car-banner}}
+
 
     {{#if products.top_sellers}}
         {{> components/products/top products=products.top_sellers columns=theme_settings.homepage_top_products_column_count}}
@@ -48,6 +50,8 @@ blog:
     {{{region name="home_below_new_products"}}}
 
     {{> components/custom/home/release-banner}}
+
+    {{> components/custom/home/subscription}}
 
 </div>
 {{/partial}}

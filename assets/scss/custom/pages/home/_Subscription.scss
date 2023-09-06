@@ -1,0 +1,56 @@
+@import '../../global/ScreenSizes';
+@import '../../global/Colors';
+
+.subscription-form-section {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @media (min-width: $desktop-screen-min-width) {
+        grid-template-columns: 375px 1fr;
+        gap: 40px;
+    }
+
+    @media (min-width: 1100px) {
+        gap: 70px;
+    }
+
+    .subscription-img {
+        img {
+            width: 100%;
+        }
+    }
+
+    .subscription-form-wrapper {
+        &--title {
+            margin: 20px 0;
+            color: #2F241D;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 140%;
+        }
+
+        &--input {
+            .form-prefixPostfix {
+                position: relative;
+
+                .form-input {
+                    height: 4rem;
+                }
+
+                .form-prefixPostfix-button--postfix {
+                    width: 160px;
+                    position: absolute;
+                    right: 8px;
+                    top: 7px;
+                    margin: 0;
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+    }
+
+
+}
+

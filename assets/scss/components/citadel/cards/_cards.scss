@@ -90,6 +90,10 @@
     }
 }
 
+.brandName {
+    text-transform: uppercase;
+}
+
 .card-text {
     margin-bottom: $card-text-marginBottom;
 
@@ -127,6 +131,18 @@
 
     @include breakpoint("small") {
         text-align: left;
+    }
+
+    .card-text {
+        .price-section {
+            .price {
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 140%;
+                color: #23263B;
+            }
+        }
     }
 }
 

@@ -5,6 +5,7 @@
     "page": {},
     "product": {}
   },
-  "normalStoreUrl": "https://finten.mybigcommerce.com",
-  "port": "3000"
+  "normalStoreUrl": "https://crest-liquor-co.mybigcommerce.com",
+  "port": "3000",
+  "environment": "production"
 }
