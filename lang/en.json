@@ -7,7 +7,7 @@
     "footer": {
         "title": "Footer Start",
         "brands": "Popular Brands",
-        "navigate": "Navigate",
+        "navigate": "Store Information",
         "info": "Info",
         "categories": "Categories",
         "call_us": "Call us at {phone_number}",
@@ -713,9 +713,9 @@
         "related_products": "Related Products",
         "top": "Most Popular Products",
         "similar_by_views": "Customers Also Viewed",
-        "featured": "Featured Products",
+        "featured": "TRENDING NOW",
         "file_option_set": "Currently: <a href=\"{url}\" target=\"_blank\">{name}</a>",
-        "new": "New Products",
+        "new": "Limited Release",
         "warranty": "Warranty Information",
         "reviews": {
             "hide": "Hide Reviews",

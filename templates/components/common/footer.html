@@ -70,38 +70,38 @@
             </article>
             {{/and}}
 
-            {{#if settings.address}}
-            <article class="footer-info-col footer-info-col--small" data-section-type="storeInfo">
-                <h3 class="footer-info-heading">{{lang 'footer.info'}}</h3>
-                <address>{{nl2br settings.address}}</address>
-                {{#if settings.phone_number}}
-                    <strong>{{lang 'footer.call_us' phone_number=settings.phone_number}}</strong>
-                {{/if}}
-            </article>
-            {{/if}}
+            <article class="footer-info-col footer-info-col--small" data-section-type="footer-categories">
+                <h3 class="footer-info-heading">SOCIAL</h3>
+                <ul class="footer-info-list">
+                    <li>
+                        <a href="#">TWITTER</a>
+                    </li>
+                    <li>
+                        <a href="#">FACEBOOK</a>
+                    </li><li>
+                        <a href="#">INSTAGRAM</a>
+                    </li>
 
-            <article class="footer-info-col" data-section-type="newsletterSubscription">
-                {{#if settings.show_newsletter_box}}
-                    {{> components/common/subscription-form}}
-                {{/if}}
-                {{> components/common/payment-icons}}
+                </ul>
             </article>
         </section>
-        {{#if settings.paypal_commerce_credit_message}}
+
+
         <div class="footer-copyright">
-            <p class="paypal-credit">{{nl2br settings.paypal_commerce_credit_message}}</p>
+            <p class="footer-copyright--title">
+                PROP 65 WARNING
+            </p>
+            <p class="footer-copyright--description">
+                WARNING: Drinking distilled spirits, beer, coolers, wine and other alcoholic beverages may increase cancer risk, and, during pregnancy, can cause birth defects. For more information go to www.P65Warnings.ca.gov/alcohol
+            </p>
         </div>
-        {{/if}}
-        {{#if theme_settings.show_powered_by}}
-            <div class="footer-copyright">
-                <p class="powered-by">{{lang 'footer.powered_by'}} <a href="https://www.bigcommerce.com?utm_source=merchant&amp;utm_medium=poweredbyBC" rel="nofollow">BigCommerce</a></p>
-            </div>
-        {{/if}}
-        {{#if theme_settings.show_copyright_footer}}
-            <div class="footer-copyright">
-                <p class="powered-by">&copy; {{moment format="YYYY"}} {{settings.store_name}} </p>
-            </div>
-        {{/if}}
+
+
     </div>
     {{{region name="ssl_site_seal--global"}}}
 </footer>
+<div class="footer-logo-banner">
+    <img src="{{getImage settings.store_logo.image 'logo_size'}}" alt="" class="footer-logo-banner__logo">
+    <p class="footer-logo-banner__copyright">Copyright © 2023 - Crest Liquor Company Inc</p>
+    <p class="footer-logo-banner__disclaimer">Spirit sales where allowed by law</p>
+</div>

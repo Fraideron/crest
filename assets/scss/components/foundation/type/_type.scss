@@ -37,7 +37,13 @@ cite {
 
 .page-heading {
     margin: 0 0 spacing("double");
-    text-align: center;
+    text-align: left;
+    color: #23263B;
+    font-family: Playfair Display SC;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%;
 }
 
 h1 {

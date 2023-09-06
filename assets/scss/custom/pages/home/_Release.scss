@@ -3,18 +3,29 @@
 
 
 .release-banner-section {
+
     .release-banner-wrapper {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        background-image: url("/assets/img/custom/release.png");
         background-size: cover;
         margin: 50px 0;
         padding: 18px 40px;
         margin-right: calc(50% - 50vw);
         margin-left: calc(50% - 50vw);
         background-position: center;
+        position: relative;
+
+        &--img {
+            position: absolute;
+            left: 0;
+            height: 100%;
+            margin-right: calc(50% - 50vw);
+            margin-left: calc(50% - 50vw);
+            z-index: -1;
+            object-fit: cover;
+        }
 
         @media (min-width: $desktop-screen-min-width) {
             flex-direction: row;
