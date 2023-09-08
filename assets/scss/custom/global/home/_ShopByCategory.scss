@@ -1,0 +1,84 @@
+@import "../../global/Colors";
+@import "../../global/ScreenSizes";
+@import "_DesktopShopByCategory";
+
+
+
+.mobile-category-title{
+
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 18px;
+color: #91929D;
+}
+
+.slider {
+    display: block;
+    list-style: none;
+    // background-color: #EEEEEE;
+  }
+
+  
+.category-card-wrapper {
+    text-decoration: none;
+}
+
+
+
+  @media screen and (min-width: 800px) {
+
+    .mobile-slide {
+      display: none;
+    }
+  }
+  
+.category-item {
+  position: relative;
+  
+
+  margin-right: 13px;
+ 
+}
+ 
+
+  .categories-title{
+    position: absolute;
+    left: 50%;                         
+    transform: translate(-50%, 0);
+    
+    bottom: 3px;
+    // left: 30%;
+    // text-align: center;
+    // right: 0;
+    white-space: nowrap;
+    font-family: Playfair Display;
+    // font-size: 9px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: block;
+    text-align: center;
+    color: #23263B;
+  }
+  
+
+
+  @media screen and (max-width: 800px) {
+
+
+    .categories-title {
+      margin-bottom: 8px;
+    }
+        
+    }
+
+    @media screen and (max-width: 600px) {
+
+
+      .categories-title {
+        font-size: 9px;
+        margin-bottom: 0;
+      }
+          
+      }

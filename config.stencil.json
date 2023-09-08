@@ -6,6 +6,6 @@
     "product": {}
   },
   "normalStoreUrl": "https://crest-liquor-co.mybigcommerce.com",
-  "port": "3000",
+  "port": "3005",
   "environment": "production"
 }
