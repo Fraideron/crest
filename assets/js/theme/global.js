@@ -30,8 +30,24 @@ export default class Global extends PageManager {
     privacyCookieNotification();
     svgInjector();
 
+    this.isHeaderAbsolute();
 
     renderGlobalComponents(cartId, settings.store_hash)
+  }
+
+  isHomePage() {
+    return $('.release-banner-wrapper').length;
+  }
+
+  isHeaderAbsolute() {
+    if (this.isHomePage()) {
+      $('.desktop-nav-container').css('position', 'absolute');
+      console.log('home');
+    } else {
+      console.log('not home');
+      $('.desktop-nav-container').css('position', 'relative');
+      $('.desktop-nav-container').css('background', '2F241D');
+    }
   }
 
   httpGet(url, key) {
