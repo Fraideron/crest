@@ -29,7 +29,7 @@
         }
 
         @include breakpoint("medium") {
-            max-height: remCalc(600px);
+            max-height: remCalc(800px);
         }
     }
 
@@ -196,7 +196,7 @@
         padding: spacing("single");
         position: absolute;
         right: 15%;
-        top: 30%;
+        top: 50%;
         transform: translateY(-50%);
         width: remCalc(700px);
         width: 70%;
