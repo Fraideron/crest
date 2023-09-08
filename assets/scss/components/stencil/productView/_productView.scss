@@ -182,12 +182,18 @@
 // -----------------------------------------------------------------------------
 
 .productView-price {
-    font-size: fontSize("smaller");
-    margin-bottom: spacing("third");
+    color: #000;
+    font-family: Calibri;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: 1px;
+    order: 5;
 
     @include breakpoint("medium") {
         font-size: fontSize("larger");
-        margin-bottom: spacing("base");
+        margin-bottom: 30px;
+        order: 0;
     }
 
     .price-section--saving {
@@ -333,9 +339,46 @@
         > .form-label:nth-of-type(2) {
             margin-left: 0;
         }
+
+        &--increments {
+            text-align: left;
+
+            button {
+                display: none;
+            }
+
+            .form-input--incrementTotal {
+                border: solid 2px #252525;
+                padding: 6px;
+                color: #252525;
+            }
+        }
     }
 
     .form-action {
+
+        input {
+            background: #FFC425;
+            border-color: #FFC425;
+            color: #FFF;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 150%;
+            letter-spacing: 2px;
+            border-radius: 100px;
+        }
+
+        .wishlistBtn {
+            border: 1px solid var(--REED, #CC101F);
+            background: #FFF;
+            color: #CC101F;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 150%;
+            letter-spacing: 2px;
+        }
+
 
         @include breakpoint("small") {
             float: left;
@@ -345,7 +388,12 @@
 
         @include breakpoint("medium") {
             padding: 0;
-            width: auto;
+            display: block;
+            width: 100%;
+
+            input {
+                width: 100% !important;
+            }
         }
 
         @include breakpoint("large") {
@@ -433,5 +481,17 @@
     img {
         max-width: none;
         width: auto;
+    }
+}
+
+.socialLinks {
+    display: none;
+}
+
+.product-view-reviews-desktop {
+    display: none;
+
+    @include breakpoint("medium") {
+        display: block;
     }
 }

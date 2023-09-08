@@ -25,6 +25,7 @@
             margin-left: calc(50% - 50vw);
             z-index: -1;
             object-fit: cover;
+            width: 100%;
         }
 
         @media (min-width: $desktop-screen-min-width) {

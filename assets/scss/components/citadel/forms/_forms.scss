@@ -149,6 +149,13 @@
     font-family: fontFamily("headingSans");
     font-size: fontSize("smallest");
     margin-bottom: spacing("half");
+    color: #252525;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 30px */
+    letter-spacing: 0.7px;
+    text-align: left;
 }
 
 .form-select--date {
@@ -246,7 +253,7 @@
     }
 
     .form-prefixPostfix-button--postfix {
-    
+
         @include breakpoint("large") {
             margin: 1em 0 spacing("half");
         }
