@@ -7,20 +7,34 @@
   </div>
 
   <div class="wrapper-form">
-    <form>
+    <form
+      class="form"
+      onsubmit="return false"
+      data-url="{{urls.search}}"
+      data-quick-search-form
+    >
       <div class="form-search">
         <input
           type="search"
           class="form-input"
-          name="name"
-          id="nav-menu-quick-search"
-          placeholder="Search products, articles, faq, ..."
-          autocomplete="of"
+          data-search-quick
+          name="{{name}}"
+          id="{{name}}"
+          data-error-message="{{lang 'search.error.empty_field'}}"
+          placeholder="{{lang 'search.quick_search.input_placeholder'}}"
+          autocomplete="off"
         />
         <button class="serch-btn">
           <img class="serch-img" src="{{cdn 'img/Search.svg'}}" alt="image" />
         </button>
       </div>
     </form>
+    <section class="quickSearchResults" data-bind="html: results"></section>
+    <p
+      role="status"
+      aria-live="polite"
+      class="aria-description--hidden"
+      data-search-aria-message-predefined-text="{{{lang 'search.results.quick_count_live'}}}"
+    ></p>
   </div>
 </section>
