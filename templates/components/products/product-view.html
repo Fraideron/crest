@@ -224,6 +224,9 @@
                     {{/each}}
                 {{/if}}
             </dl>
+            <span class="desktop-ProductDescription">
+                {{{product.description}}}
+            </span>
         </div>
     </section>
 
@@ -265,12 +268,12 @@
     </section>
 
     <article class="productView-description">
-        {{#if theme_settings.show_product_details_tabs}}
-            {{> components/products/description-tabs}}
-        {{else}}
-            {{> components/products/description}}
-        {{/if}}
+        {{> components/products/description}}
     </article>
+
+</div>
+<div class="product-view-reviews-desktop">
+    {{> components/products/reviews reviews=product.reviews product=product urls=urls}}
 </div>
 
 <div id="previewModal" class="modal modal--large" data-reveal>
