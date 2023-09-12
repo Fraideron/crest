@@ -7,15 +7,15 @@
   </div>
 
   <div class="wrapper-form">
-    <form>
+    <form action="{{urls.search}}">
       <div class="form-search">
         <input
           type="search"
           class="form-input"
-          name="name"
+          name="search_query"
           id="nav-menu-quick-search"
           placeholder="Search products, articles, faq, ..."
-          autocomplete="of"
+          autocomplete="off"
         />
         <button class="serch-btn">
           <img class="serch-img" src="{{cdn 'img/Search.svg'}}" alt="image" />
