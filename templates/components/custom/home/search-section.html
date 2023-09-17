@@ -1,0 +1,26 @@
+<section class="search-menu">
+  <div class="wrapper-menu">
+    <a href="#" class="mobileMenu-toggle" data-mobile-menu-toggle="menu">
+      <span class="mobileMenu-toggleIcon">Toggle menu</span>
+      <p class="search-text">menu</p>
+    </a>
+  </div>
+
+  <div class="wrapper-form">
+    <form action="{{urls.search}}">
+      <div class="form-search">
+        <input
+          type="search"
+          class="form-input"
+          name="search_query"
+          id="nav-menu-quick-search"
+          placeholder="Search products, articles, faq, ..."
+          autocomplete="off"
+        />
+        <button class="serch-btn">
+          <img class="serch-img" src="{{cdn 'img/Search.svg'}}" alt="image" />
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
