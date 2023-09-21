@@ -188,18 +188,17 @@
     @include breakpoint("small") {
         @include carouselOpaqueBackgrounds;
         background: none;
-        left: 0;
+        left: 50px;
         margin: 0 auto;
         max-height: 80%;
         overflow: auto;
-        padding: spacing("single") * 1.5;
+        padding: spacing("single");
         padding: spacing("single");
         position: absolute;
         right: 15%;
         top: 50%;
         transform: translateY(-50%);
-        width: remCalc(700px);
-        width: 70%;
+        width: 80%;
     }
 }
 
