@@ -43,7 +43,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-
+      margin-bottom: 40px;
       height: 220px;
     }
 
@@ -78,6 +78,10 @@
     }
   }
 </style>
+
+{{#unless theme_settings.hide_category_page_heading }}
+<h1 class="heading-title-catalog">{{category.name}}</h1>
+{{{region name="category_below_header"}}} {{/unless}}
 
 <div class="cataloge-banner-section">
   <img
