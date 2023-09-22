@@ -1,24 +1,24 @@
 .navList-item.is-selected {
-    position: relative;
+  position: relative;
 
-    &>svg {
-        display: block;
+  & > svg {
+    display: block;
+  }
+
+  .is-selected {
+    &::before {
+      z-index: 5;
+      opacity: 0;
     }
-    
-    .is-selected {
-        &::before {
-            z-index: 5;
-            opacity: 0;
-        }
-    }
+  }
 }
 
-.navList-item>svg {
-    display: none;
-    position: absolute;
-    top: 3px;
-    cursor: pointer;
-    z-index: 1;
+.navList-item > svg {
+  display: none;
+  position: absolute;
+  top: 3px;
+  cursor: pointer;
+  z-index: 1;
 }
 
 .navList-action--checkbox {
@@ -82,4 +82,11 @@
     height: 50px;
     background-color: blue;
   }
+}
+
+.remove-all {
+  text-decoration: underline;
+  font-size: 15px;
+  font-weight: 500;
+  color: #1d1f22;
 }
