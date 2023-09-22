@@ -1,9 +1,36 @@
+.navList-item.is-selected {
+    position: relative;
+
+    &>svg {
+        display: block;
+    }
+    
+    .is-selected {
+        &::before {
+            z-index: 5;
+            opacity: 0;
+        }
+    }
+}
+
+.navList-item>svg {
+    display: none;
+    position: absolute;
+    top: 3px;
+    cursor: pointer;
+    z-index: 1;
+}
+
 .navList-action--checkbox {
   @include checkRadioBase();
   @include checkBox-base();
   margin-left: 10px;
   font-size: 16px;
   font-weight: normal;
+
+  &:focus {
+    outline: none;
+  }
 
   &::before,
   &::after {
@@ -34,6 +61,7 @@
     background-size: contain;
     background-origin: content-box;
     border-radius: 0px;
+    opacity: 0 !important;
   }
 
   &:focus {
@@ -44,10 +72,10 @@
     @include checkRadioBase--disabled();
   }
 
-  &.is-checked,
-  &.is-selected {
-    @include checkRadioBase--checked();
-  }
+  //&.is-checked,
+  //&.is-selected {
+  //  @include checkRadioBase--checked();
+  //}
 
   &:checked {
     width: 50px;
