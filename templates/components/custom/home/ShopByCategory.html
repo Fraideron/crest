@@ -1,41 +1,40 @@
-
 <div class="mobile-slide">
-    <h2 class="mobile-category-title">Explore by category</h2>
-    <div class="wrapper">
+  <h2 class="mobile-category-title">Explore by category</h2>
+  <div class="wrapper">
     <ul class="slider">
-        {{#each categories}}
-            <li class="category-item">
-                <img src="{{getImage image 'productgallery_size' (cdn theme_settings.default_image_product)}}" alt="">
-                <a href={{url}} class="category-card-wrapper">
-                    <span class="categories-title">{{name}}</span>
-                </a>
-            </li>
-        {{/each}}
-    </ul>
-</div>
-</div>
-
-
-
-
-
-       
-<div class="category-container">
-    <h2 class="category-title">SHOP BY CATAGORY</h2>
-            <ul class="slider-desktop">
-        {{#each categories}}
-        <li class="slider-desktop-item">
-        <img src="{{getImage image 'productgallery_size' (cdn theme_settings.default_image_product)}}" alt="">
-        <a href={{url}} class="category-card-wrapper">
-            <p class="item-text">{{name}}</p>
+      {{#each categories}}
+      <li class="category-item">
+        <div class="img-wrapper">
+          <img
+            class="img-slide"
+            src="{{getImage image 'productgallery_size' (cdn theme_settings.default_image_product)}}"
+            alt=""
+          />
+        </div>
+        <a href="{{url}}" class="category-card-wrapper">
+          <span class="categories-title">{{name}}</span>
         </a>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>
+
+<!-- DESKTOP -->
+<div class="category-container">
+  <h2 class="category-title">SHOP BY CATAGORY</h2>
+  <ul class="slider-desktop">
+    {{#each categories}}
+    <li class="slider-desktop-item">
+      <img
+        src="{{getImage image 'productgallery_size' (cdn theme_settings.default_image_product)}}"
+        alt=""
+      />
+      <div class="img-wrap"></div>
+      <a href="{{url}}" class="category-card-wrapper">
+        <p class="item-text">{{name}}</p>
+      </a>
     </li>
     {{/each}}
-</ul>
+  </ul>
 </div>
-
-
-   
-
-
-

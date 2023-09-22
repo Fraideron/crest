@@ -33,42 +33,6 @@
 //
 // -----------------------------------------------------------------------------
 
-// .navList-action--checkbox {
-//   @include checkRadioBase();
-//   @include checkBox-base();
-
-//   &::before,
-//   &::after {
-//     top: 50%; // 1
-//   }
-
-//   &::before {
-//     margin-top: -$checkRadio-outerSize / 2;
-//   }
-
-//   &::after {
-//     margin-top: -$checkRadio-outerSize / 2 + remCalc(1);
-//   }
-
-//   &:focus {
-//     @include checkRadioBase--focus();
-//   }
-
-//   &.is-disabled {
-//     @include checkRadioBase--disabled();
-//   }
-
-//   &.is-checked,
-//   &.is-selected {
-//     @include checkRadioBase--checked();
-//   }
-
-//   &:checked {
-//     width: 50px;
-//     height: 50px;
-//   }
-// }
-
 // NavList action close
 // -----------------------------------------------------------------------------
 //

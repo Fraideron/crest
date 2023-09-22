@@ -1,12 +1,9 @@
-.navList {
-  outline: solid 1px tomato;
-}
 .navList-action--checkbox {
   @include checkRadioBase();
   @include checkBox-base();
   margin-left: 10px;
   font-size: 16px;
-  font-weight: normalg;
+  font-weight: normal;
 
   &::before,
   &::after {
@@ -28,8 +25,6 @@
 
   &::after {
     margin-top: -$checkRadio-outerSize / 2 + remCalc(1);
-    // display: inline-block;
-    // content: " ";
     top: 10px;
     left: -10px;
     width: 24px;
