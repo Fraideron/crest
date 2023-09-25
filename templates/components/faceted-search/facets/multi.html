@@ -59,5 +59,13 @@
     </a>
     {{/if}}
   </div>
+  {{#if selected}}
+  <a
+    href="{{remove_url}}"
+    class="longCustom-clearLink"
+    data-faceted-search-facet
+    >{{lang 'search.faceted.selected.clear-all'}}
+  </a>
+  {{/if}}
 </div>
 {{/if}}
