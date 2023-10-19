@@ -39,11 +39,7 @@
   },
   "css_compiler": "scss",
   "autoprefixer_cascade": true,
-  "autoprefixer_browsers": [
-    "> 1%",
-    "last 2 versions",
-    "Firefox ESR"
-  ],
+  "autoprefixer_browsers": ["> 1%", "last 2 versions", "Firefox ESR"],
   "settings": {
     "hide_breadcrumbs": false,
     "hide_page_heading": false,
@@ -174,7 +170,7 @@
     "carousel-bgColor": "#ffffff",
     "carousel-title-color": "#444444",
     "carousel-description-color": "#333333",
-    "carousel-dot-color": "#333333",
+    "carousel-dot-color": "##CC101F",
     "carousel-dot-color-active": "#757575",
     "carousel-dot-bgColor": "#ffffff",
     "carousel-arrow-color": "#8f8f8f",
@@ -343,10 +339,7 @@
       "mastercard",
       "visa"
     ],
-    "supported_payment_methods": [
-      "card",
-      "paypal"
-    ],
+    "supported_payment_methods": ["card", "paypal"],
     "lazyload_mode": "lazyload+lqip",
     "checkout-paymentbuttons-paypal-color": "black",
     "checkout-paymentbuttons-paypal-shape": "rect",
@@ -385,12 +378,9 @@
           "sales_discounts",
           "large_catalog"
         ],
-        "industries": [
-          "home_garden"
-        ]
+        "industries": ["home_garden"]
       },
-      "images": {
-      },
+      "images": {},
       "settings": {
         "hide_breadcrumbs": false,
         "hide_page_heading": false,
@@ -521,9 +511,9 @@
         "carousel-bgColor": "#ffffff",
         "carousel-title-color": "#444444",
         "carousel-description-color": "#333333",
-        "carousel-dot-color": "#333333",
-        "carousel-dot-color-active": "#757575",
-        "carousel-dot-bgColor": "#ffffff",
+        "carousel-dot-color": "#72757E",
+        "carousel-dot-color-active": "#CC101F",
+        "carousel-dot-bgColor": "transparent",
         "carousel-arrow-color": "#8f8f8f",
         "carousel-arrow-color--hover": "#474747",
         "carousel-arrow-bgColor": "#ffffff",
@@ -690,10 +680,7 @@
           "mastercard",
           "visa"
         ],
-        "supported_payment_methods": [
-          "card",
-          "paypal"
-        ],
+        "supported_payment_methods": ["card", "paypal"],
         "lazyload_mode": "lazyload+lqip",
         "checkout-paymentbuttons-paypal-color": "black",
         "checkout-paymentbuttons-paypal-shape": "rect",
