@@ -5,84 +5,82 @@
       <a href="{{urls.home}}" class="" data-header-logo-link>
         {{#if settings.store_logo.image}} {{#if theme_settings.logo_size '==='
         'original'}}
-        <img
-          class="header-logo-image-unknown-size"
-          src="{{getImage settings.store_logo.image 'logo_size'}}"
-          alt="{{settings.store_logo.title}}"
-          title="{{settings.store_logo.title}}"
-        />
+        <img class="header-logo-image-unknown-size" src="{{getImage settings.store_logo.image 'logo_size'}}"
+          alt="{{settings.store_logo.title}}" title="{{settings.store_logo.title}}" />
         {{else}}
         <div class="header-logo-image-container">
-          <img
-            class="desktop-header-logo-image"
-            src="{{getImage settings.store_logo.image 'logo_size'}}"
+          <img class="desktop-header-logo-image" src="{{getImage settings.store_logo.image 'logo_size'}}"
             srcset="{{getImageSrcset1x2x settings.store_logo.image theme_settings.logo_size}}"
-            alt="{{settings.store_logo.title}}"
-            title="{{settings.store_logo.title}}"
-          />
+            alt="{{settings.store_logo.title}}" title="{{settings.store_logo.title}}" />
         </div>
         {{/if}} {{else}}
         <span class="header-logo-text">{{settings.store_logo.title}}</span>
         {{/if}}
       </a>
     </div>
-    <ul class="desktop-list">
-      <li>
-        <a href="#" class="menu_link"><p>SPIRITS</p></a>
+
+
+
+
+    <ul class="categori-list">
+
+      {{#each categories}}
+      {{#each children}}
+
+
+      <li class="categori-items">
+
+        <a href="{{url}}" class="menu_link">
+          <p class="categori-title">{{name}}</p>
+        </a>
+
+        <div class="sub-menu">
+          <ul class="sub_menu_list">
+            {{#each children}}
+            <li>
+              {{#if children}}
+              <a href="{{url}}" class="">
+                <p class="">{{name}}</p>
+              </a>
+              {{/if}}
+            </li>
+            {{/each}}
+          </ul>
+        </div>
+
       </li>
-      <li>
-        <a href="#" class="menu_link"><p>LIQUOR</p></a>
-      </li>
-      <li>
-        <a href="#" class="menu_link"><p>WINE</p></a>
-      </li>
-      <li>
-        <a href="#" class="menu_link"><p>SPECIALS</p></a>
-      </li>
-      <li>
-        <a href="#" class="menu_link"><p>BRANDY</p></a>
-      </li>
-      <li>
-        <a href="#" class="menu_link"><p>BARREL PICKS</p></a>
-      </li>
+      {{/each}}
+      {{/each}}
+
+
+
     </ul>
+
+
+
+
+
 
     <div class="link-section">
       <ul class="desktop-navigation-list">
         <li class="desktop-navigation-item">
-          <a href="{{urls.account.index}}"
-            ><img class="navigation-img" src="{{cdn 'img/Heart.svg'}}" alt=""
-          /></a>
+          <a href="{{urls.account.index}}"><img class="navigation-img" src="{{cdn 'img/Heart.svg'}}" alt="" /></a>
         </li>
         <li class="desktop-navigation-item">
-          <a href="{{urls.wishlists.all}}"
-            ><img class="navigation-img" src="{{cdn 'img/Account.svg'}}" alt=""
-          /></a>
+          <a href="{{urls.wishlists.all}}"><img class="navigation-img" src="{{cdn 'img/Account.svg'}}" alt="" /></a>
         </li>
         <li class="desktop-navigation-item">
-          <a href="{{urls.cart}}"
-            ><img class="navigation-img" src="{{cdn 'img/Cart.svg'}}" alt=""
-          /></a>
+          <a href="{{urls.cart}}"><img class="navigation-img" src="{{cdn 'img/Cart.svg'}}" alt="" /></a>
         </li>
       </ul>
 
       <div class="desktop-wrapper-form">
         <form class="desktop-form" action="{{urls.search}}">
           <div class="desktop-form-search">
-            <input
-              type="search"
-              class="form-input"
-              name="search_query"
-              id="nav-menu-quick-search"
-              placeholder="Search store"
-              autocomplete="of"
-            />
+            <input type="search" class="form-input" name="search_query" id="nav-menu-quick-search"
+              placeholder="Search store" autocomplete="of" />
             <button class="desktop-serch-btn">
-              <img
-                class="serch-img"
-                src="{{cdn 'img/Search.svg'}}"
-                alt="image"
-              />
+              <img class="serch-img" src="{{cdn 'img/Search.svg'}}" alt="image" />
             </button>
           </div>
         </form>
