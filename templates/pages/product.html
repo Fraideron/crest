@@ -13,6 +13,10 @@ product:
 
 {{#partial "page"}}
 
+    {{#each breadcrumbs}}
+        <h2 class="bla {{#if name '===' 'Home'}} blah2 {{/if}}">{{name}}</h2>
+    {{/each}}
+
     {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
 
     {{#each product.shipping_messages}}

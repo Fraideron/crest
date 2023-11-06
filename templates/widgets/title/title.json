@@ -1,0 +1,27 @@
+{
+  "name": "Custom title",
+  "schema": {
+    "type": "tab",
+    "label": "Custom title",
+    "sections": [
+      {
+        "settings": [
+          {
+            "label": "Image",
+            "settings": [
+              {
+                "type": "imageManager",
+                "id": "imageWidget",
+                "label": "Image"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "template": "<style>\n  .widgetTitle {\n    font-size: 32px;\n  }\n</style>\n\n<div>\n    {{#if imageWidget.src}}\n        <img src=\"{{{imageWidget.src}}}\" class=\"widgetTitle\"/>\n    {{/if}}\n</div>\n\n<script>\n    console.log(\"hello from the widget eith img\")\n</script>\n"
+}
+
+
+// 2d844b7a-918f-4878-8546-49c8994b3fc3
