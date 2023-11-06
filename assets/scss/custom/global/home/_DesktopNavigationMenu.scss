@@ -206,7 +206,7 @@ a {
 .sub-menu{
   // display: none;
   position: absolute;
-  display: flex;
+  // display: flex;
   // justify-content: space-around;
   top: 100px;
   z-index: 5;
@@ -226,15 +226,19 @@ a {
     font-style: 16px;
   }
 
-  ul {
-    display: flex;
+  .sub_menu_list {
+    // display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
+
+    &:first-child {
+      display: flex;
+    }
   }
 
   p {
-    color: tomato;
+    color: rgb(28, 28, 28);
     margin: 0;
     font-style: 16px;
   }
@@ -244,7 +248,10 @@ a {
     visibility: visible;
     transform: rotateX(0deg);
   }
+  
 }
+
+// НАЧАЛО подчеркивание при ховере
 
 .menu_link {
   position: relative;
@@ -272,6 +279,7 @@ a {
   transition: transform 0.25s;
 }
 
+// КОНЕЦ подчеркивание при ховере
 .categori-list {
   display: flex;
   margin: 0;
@@ -288,6 +296,83 @@ a {
     font-size: 17.6px;
     line-height: 1.7;
     text-transform: uppercase;
+  }
+}
+
+
+
+// second-sub-menu
+.second-sub-menu {
+  // display: none;
+  position: absolute;
+  top: 100px;
+  z-index: 99;
+  width: 100%;
+  background-color: #ffffff;
+  transition: 0.3s linear;
+  transform-origin: 0 0;
+  // transform: rotateX(-90deg);
+  // visibility: hidden;
+  // opacity: 0;
+  top: 40px;
+  // left: 90px;
+
+  .second-sub-link {
+    display: block;
+    padding: 10px 20px;
+    font-style: 16px;
+    p{
+      color: rgb(28, 28, 28);
+    }
+  }
+  
+  .second-menu_list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+  }
+
+  p {
+    color: white;
+  }
+
+
+  .test:hover & {
+    opacity: 1;
+    visibility: visible;
+    transform: rotateX(0deg);
+  }
+
+}
+
+.test {
+  margin-right: 70px;
+}
+
+.wine2 {
+  .sub-menu {
+    .sub_menu_list{
+      flex-direction: column;
+    }
+  }
+}
+
+.red2{
+  .second-sub-menu{
+ border: 1px solid rgb(221, 221, 221);
+  position: absolute;
+  top: 100px;
+  z-index: 99;
+  width: 100%;
+  background-color: #ffffff;
+  transition: 0.3s  ease-in-out;
+  transform-origin: 0 0;
+  transform: rotateX(-90deg);
+  visibility: hidden;
+  opacity: 0;
+  top: 0px;
+  left: 90px;
   }
 }
 

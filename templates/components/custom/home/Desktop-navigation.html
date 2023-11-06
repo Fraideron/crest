@@ -28,7 +28,7 @@
       {{#each children}}
 
 
-      <li class="categori-items">
+      <li class="categori-items {{#if name '===''Wine'}} wine2 {{/if}} {{#if name '===''Spirits'}} Spirits2 {{/if}}">
 
         <a href="{{url}}" class="menu_link">
           <p class="categori-title">{{name}}</p>
@@ -37,12 +37,25 @@
         <div class="sub-menu">
           <ul class="sub_menu_list">
             {{#each children}}
-            <li>
+            <li class="test {{#if name '===''Red'}} red2 {{/if}}">
               <a href="{{url}}" class="">
                 <p class="">{{name}}</p>
               </a>
-            </li>
 
+              <div class="second-sub-menu">
+
+                <ul class="second-menu_list">
+                  {{#each children}}
+                  <li class="second-menu_item ">
+                    <a href="{{url}}" class="second-sub-link">
+                      <p class="">{{name}}</p>
+                    </a>
+                  </li>
+                  {{/each}}
+                </ul>
+
+              </div>
+            </li>
             {{/each}}
           </ul>
         </div>
