@@ -1,6 +1,4 @@
 .desktop-nav-container {
-  position: absolute;
-
   &--background {
     position: absolute;
     width: 100%;
@@ -248,7 +246,7 @@ a {
     visibility: visible;
     transform: rotateX(0deg);
   }
-  
+
 }
 
 // НАЧАЛО подчеркивание при ховере
@@ -288,7 +286,7 @@ a {
   .categori-items {
     margin-right: 20px;
     list-style: none;
-    
+
   }
     .categori-title {
     color: #ffffff;
@@ -325,7 +323,7 @@ a {
       color: rgb(28, 28, 28);
     }
   }
-  
+
   .second-menu_list {
     list-style: none;
     margin: 0;

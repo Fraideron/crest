@@ -30,7 +30,7 @@ export default class Global extends PageManager {
     privacyCookieNotification();
     svgInjector();
 
-    this.isHeaderAbsolute();
+    // this.isHeaderAbsolute();
 
     renderGlobalComponents(cartId, settings.store_hash)
   }
