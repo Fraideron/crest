@@ -21,7 +21,7 @@ export default class Category extends CatalogPage {
         if (!$('[data-shop-by-price]').length) return;
 
         if ($('.navList-action').hasClass('is-active')) {
-            $('a.navList-action.is-active').trigger('focus');
+            $('a.navList-action.is-active').focus();
         }
 
         $('a.navList-action').on('click', () => this.setLiveRegionAttributes($('span.price-filter-message'), 'status', 'assertive'));
@@ -36,21 +36,11 @@ export default class Category extends CatalogPage {
 
         compareProducts(this.context);
 
-        this.initFacetedSearch();
-
-        if (!$('#facetedSearch').length) {
+        if ($('#facetedSearch').length > 0) {
+            this.initFacetedSearch();
+        } else {
             this.onSortBySubmit = this.onSortBySubmit.bind(this);
             hooks.on('sortBy-submitted', this.onSortBySubmit);
-
-            // Refresh range view when shop-by-price enabled
-            const urlParams = new URLSearchParams(window.location.search);
-
-            if (urlParams.has('search_query')) {
-                $('.reset-filters').show();
-            }
-
-            $('input[name="price_min"]').attr('value', urlParams.get('price_min'));
-            $('input[name="price_max"]').attr('value', urlParams.get('price_max'));
         }
 
         $('a.reset-btn').on('click', () => this.setLiveRegionsAttributes($('span.reset-message'), 'status', 'polite'));
@@ -61,7 +51,7 @@ export default class Category extends CatalogPage {
     ariaNotifyNoProducts() {
         const $noProductsMessage = $('[data-no-products-notification]');
         if ($noProductsMessage.length) {
-            $noProductsMessage.trigger('focus');
+            $noProductsMessage.focus();
         }
     }
 
@@ -79,6 +69,7 @@ export default class Category extends CatalogPage {
         const requestOptions = {
             config: {
                 category: {
+                    shop_by_price: true,
                     products: {
                         limit: productsPerPage,
                     },

@@ -100,8 +100,7 @@
     }
 }
 
-.navUser-action--currencySelector + .dropdown-menu,
-.navUser-action--channelSelector + .dropdown-menu {
+.navUser-action--currencySelector + .dropdown-menu {
     &::before {
         left: auto !important; // 6
         right: spacing("half"); // 6
@@ -302,6 +301,8 @@
     }
 
     .productGrid {
+        margin: 0 16px;
+
         padding: spacing("single") 0 0;
 
         @include breakpoint("small") {

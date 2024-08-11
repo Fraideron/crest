@@ -1,0 +1,35 @@
+<nav class="navigationMenu">
+    <a href="{{urls.home}}" class="" data-header-logo-link>
+        {{#if settings.store_logo.image}} {{#if theme_settings.logo_size '===' 'original'}}
+        <img
+          class="header-logo-image-unknown-size"
+          src="{{getImage settings.store_logo.image 'logo_size'}}"
+          alt="{{settings.store_logo.title}}"
+          title="{{settings.store_logo.title}}"
+        />
+        {{else}}
+        <div class="header-logo-image-container">
+          <img
+            class="header-logo-image"
+            src="{{getImage settings.store_logo.image 'logo_size'}}"
+            srcset="{{getImageSrcset1x2x settings.store_logo.image theme_settings.logo_size}}"
+            alt="{{settings.store_logo.title}}"
+            title="{{settings.store_logo.title}}"
+          />
+        </div>
+        {{/if}} {{else}}
+        <span class="header-logo-text">{{settings.store_logo.title}}</span>
+        {{/if}}
+      </a>
+
+      <ul class="navigation-list">
+        <li class="navigation-item"><a href="{{urls.account.index}}"><img class="navigation-img" src="{{cdn 'img/Heart.svg'}}" alt=""><p class="navigation-text">WISH</p></a></li>
+        <li class="navigation-item"><a href="{{urls.wishlists.all}}"><img class="navigation-img" src="{{cdn 'img/Account.svg'}}" alt=""><p class="navigation-text">Account</p></a></li>
+        <li class="navigation-item"><a href="{{urls.cart}}"><img class="navigation-img" src="{{cdn 'img/Cart.svg'}}" alt=""><p class="navigation-text">Cart</p></a></li>
+      </ul>
+
+
+</nav>
+
+
+

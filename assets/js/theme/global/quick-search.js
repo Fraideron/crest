@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import utils from '@bigcommerce/stencil-utils';
 import StencilDropDown from './stencil-dropdown';
+import urlUtils from '../common/utils/url-utils';
 
 export default function () {
     const TOP_STYLING = 'top: 49px;';
@@ -87,6 +88,7 @@ export default function () {
             return;
         }
 
-        window.location.href = `${searchUrl}?search_query=${encodeURIComponent(searchQuery)}`;
+        urlUtils.goToUrl(`${searchUrl}?search_query=${encodeURIComponent(searchQuery)}`);
+        window.location.reload();
     });
 }

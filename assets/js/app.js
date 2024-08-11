@@ -96,3 +96,21 @@ window.stencilBootstrap = function stencilBootstrap(pageType, contextJSON = null
         },
     };
 };
+
+export const reactGlobals = {
+  cdn: {
+    icons: '',
+    img: '',
+  },
+};
+window.setGlobalCdnPath = (data) => {
+  for (const [folder, path] of Object.entries(data)) {
+    if (stencilConfig.environment === 'development') {
+      const regex = /(\/stencil\/[0-9a-zA-Z-]+)\/(.+)/g;
+      reactGlobals.cdn[folder] = path.replace(regex, `http://localhost:${stencilConfig.port}$1/${folder}`);
+    } else {
+      const regex = /(.+\/stencil\/[0-9a-zA-Z-]+)\/(.+)/g;
+      reactGlobals.cdn[folder] = path.replace(regex, `$1/${folder}`);
+    }
+  }
+};

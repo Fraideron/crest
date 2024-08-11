@@ -1,11 +1,7 @@
 <nav class="navUser">
-    {{#or customer (unless settings.hide_price_from_guests)}}
+    {{#or customer (unless theme_settings.restrict_to_login)}}
         {{> components/common/currency-selector}}
     {{/or}}
-
-    {{#if theme_settings.show_channels}}
-        {{> components/common/channel-selector}}
-    {{/if}}
 
     <ul class="navUser-section navUser-section--alt">
         {{#if customer.store_credit.value '>' 0}}

@@ -29,7 +29,7 @@
         }
 
         @include breakpoint("medium") {
-            max-height: remCalc(600px);
+            max-height: remCalc(800px);
         }
     }
 
@@ -55,6 +55,12 @@
         margin: 0;
         top: 50%;
         transform: translateY(-50%);
+        background: none;
+        border: none;
+
+        &:before {
+            height: 15px;
+        }
     }
 
     .slick-next {
@@ -82,6 +88,7 @@
 
         li {
             @include carouselOpaqueBackgrounds($slick-dot-bgColor);
+            background-color: transparent;
         }
     }
 
@@ -110,7 +117,7 @@
         &.is-image-error {
             .heroCarousel-image-wrapper {
                 background: url("../img/hero-carousel-image-load-error.svg") center center no-repeat;
-                background-size: contain;    
+                background-size: contain;
             }
         }
     }
@@ -125,7 +132,7 @@
 
     .heroCarousel-image {
         height: 100%;
-        object-fit: contain;
+        object-fit: cover;
         object-position: 50% 0%;
         width: 100%;
 
@@ -177,60 +184,87 @@
 .heroCarousel-content {
     background-color: rgba($carousel-bgColor, 1);
     padding: spacing("half") spacing("single") (spacing("double"));
-    text-align: center;
+    text-align: left;
 
     @include breakpoint("small") {
         @include carouselOpaqueBackgrounds;
-        background-color: rgba($carousel-bgColor, 0.9);
-        left: 0;
+        background: none;
+        left: 50px;
         margin: 0 auto;
         max-height: 80%;
         overflow: auto;
-        padding: spacing("single") * 1.5;
+        padding: spacing("single");
         padding: spacing("single");
         position: absolute;
-        right: 0;
+        right: 15%;
         top: 50%;
         transform: translateY(-50%);
-        width: remCalc(700px);
-        width: 70%;
-
-        &.heroCarousel-content--empty {
-            background-color: transparent;
-            left: 50%;
-            overflow: visible;
-            padding: 0;
-            right: auto;
-            transform: translateX(-50%) translateY(-50%);
-            width: auto;
-        }
+        width: 80%;
     }
 }
 
 .heroCarousel-title {
-    color: $carousel-title-color;
-    font-size: fontSize("small");
-    margin: 0;
+    color: black;
+    font-family: Playfair Display;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 110%; /* 35.2px */
+    letter-spacing: 2px;
+
+    @include breakpoint("small") {
+        color: white;
+        font-family: Playfair Display;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 110%; /* 35.2px */
+        letter-spacing: 2px;
+    }
 
     @include breakpoint("medium") {
-        font-size: fontSize("hero");
+        color: var(--Crest-Yellow, #FFC425);
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+        font-size: 66.939px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 110%; /* 73.633px */
+        letter-spacing: 4.184px;
     }
 }
 
 .heroCarousel-description {
-    color: $carousel-description-color;
-    font-size: fontSize("tiny");
-    margin: 0;
+    color: black;
+    font-family: Calibri;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%; /* 21px */
 
     @include breakpoint("small") {
-        font-size: fontSize("smallest");
+        color: var(--neutral-white, #FFF);
+        font-family: Calibri;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 140%; /* 21px */
     }
 
     @include breakpoint("medium") {
-        font-size: fontSize("smaller");
+        color: var(--REED, #CC101F);
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+        font-family: Calibri;
+        font-size: 29.286px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 140%;
     }
 }
 
 .heroCarousel-action {
     margin: spacing("single") 0 0;
+}
+
+.carousel-play-pause-button {
+    display: none !important;
 }

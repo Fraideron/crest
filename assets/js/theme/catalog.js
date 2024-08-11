@@ -17,7 +17,7 @@ export default class CatalogPage extends PageManager {
         const $sortBySelector = $('[data-sort-by="product"] #sort');
 
         if (window.localStorage.getItem('sortByStatus')) {
-            $sortBySelector.trigger('focus');
+            $sortBySelector.focus();
             window.localStorage.removeItem('sortByStatus');
         }
     }

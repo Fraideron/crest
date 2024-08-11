@@ -9,11 +9,12 @@
 
 
 .body {
-    margin-bottom: spacing("double") * 2;
-    margin-top: spacing("single"); // 1
+    margin-bottom: spacing("single");
+    overflow-x: hidden;
+    margin-top: 30px;
 
     @include breakpoint("medium") {
-        margin-top: spacing("single") + spacing("base"); // 1
+        margin-top: 0;
     }
 }
 
@@ -27,16 +28,6 @@
 .page-content,
 .page-content--full {
     @include grid-column(12);
-}
-
-.page-region {
-    @include grid-column(12);
-    float: right;
-    width: 100%;
-
-    @include breakpoint("medium") {
-        width: 75%;
-    }
 }
 
 .page-content--centered {

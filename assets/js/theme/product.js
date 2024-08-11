@@ -59,6 +59,13 @@ export default class Product extends PageManager {
         });
 
         this.productReviewHandler();
+
+        $('div.productView-description ').hide();
+
+      $('.productView-title').click(function() {
+        $(this).toggleClass('active');
+        $(this).next().toggle();
+      });
     }
 
     ariaDescribeReviewInputs($form) {

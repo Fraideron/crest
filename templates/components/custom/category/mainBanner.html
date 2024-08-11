@@ -1,0 +1,103 @@
+<style>
+  .category-header-image {
+    display: none;
+  }
+  @media screen and (max-width: 800px) {
+    .cataloge-banner-section {
+      height: auto;
+    }
+
+    .cataloge-baner-img {
+      height: auto;
+      max-width: 100%;
+    }
+
+    .sidebarBlock {
+      display: none;
+    }
+    .cataloge-title {
+      margin: 0;
+      margin-top: -60px;
+      margin-bottom: 30px;
+      margin-left: 16px;
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 48px;
+      color: #ffffff;
+    }
+
+    .cataloge-description {
+      margin: 0;
+      margin-left: 16px;
+      margin-right: 16px;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 19px;
+      color: #000000;
+    }
+  }
+
+  @media screen and (min-width: 800px) {
+    .cataloge-banner-section {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 40px;
+      height: 220px;
+    }
+
+    .cataloge-baner-img {
+      width: 1280px;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .cataloge-banner-wrapper {
+      position: absolute;
+      display: grid;
+      grid-template-columns: 500px 1fr;
+    }
+
+    .cataloge-title {
+      margin: 0;
+      margin-left: 48px;
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 48px;
+      color: #ffffff;
+    }
+
+    .cataloge-description {
+      margin: 0;
+      margin-right: 118px;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 14px;
+      color: #ffffff;
+    }
+  }
+</style>
+
+{{#unless theme_settings.hide_category_page_heading }}
+<h1 class="heading-title-catalog">{{category.name}}</h1>
+{{{region name="category_below_header"}}} {{/unless}}
+
+<div class="cataloge-banner-section">
+  <img
+    class="cataloge-baner-img"
+    sizes="100vw"
+    src="{{cdn 'img/custom/small3x.png'}}"
+    alt="cataloge image banner"
+  />
+
+  <div class="cataloge-banner-wrapper">
+    <h3 class="cataloge-title">{{category.name}}</h3>
+    <p class="cataloge-description">
+      While Kentucky bourbons typically hover around 45 percent, there are some
+      that jump up to 50 percent or more. If you’re looking to mix your bourbon
+      into a cocktail, this is a good thing: higher proof bourbons can stand up
+      to strong flavors and make themselves known in a drink.
+    </p>
+  </div>
+</div>

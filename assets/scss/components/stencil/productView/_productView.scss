@@ -182,12 +182,18 @@
 // -----------------------------------------------------------------------------
 
 .productView-price {
-    font-size: fontSize("smaller");
-    margin-bottom: spacing("third");
+    color: #000;
+    font-family: Calibri;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: 1px;
+    order: 5;
 
     @include breakpoint("medium") {
         font-size: fontSize("larger");
-        margin-bottom: spacing("base");
+        margin-bottom: 30px;
+        order: 0;
     }
 
     .price-section--saving {
@@ -333,81 +339,84 @@
         > .form-label:nth-of-type(2) {
             margin-left: 0;
         }
+
+        &--increments {
+            text-align: left;
+
+            button {
+                display: none;
+            }
+
+            .form-input--incrementTotal {
+                border: solid 2px #252525;
+                padding: 6px;
+                color: #252525;
+
+                width: 50px;
+            }
+        }
     }
 
-    .add-to-cart-buttons {
-        display: inline-grid;
-        float: left;
-        margin-bottom: 1rem;
-        width: 100%;
+    .form-action {
+
+        input {
+            background: #FFC425;
+            border-color: #FFC425;
+            color: #FFF;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 150%;
+            letter-spacing: 2px;
+            border-radius: 100px;
+        }
+
+        .wishlistBtn {
+            border: 1px solid var(--REED, #CC101F);
+            background: #FFF;
+            color: #CC101F;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 150%;
+            letter-spacing: 2px;
+        }
+
 
         @include breakpoint("small") {
+            float: left;
             padding: 0 remCalc(10);
             width: 50%;
         }
 
         @include breakpoint("medium") {
-            padding-right: spacing("half");
-            width: 50%;
+            padding: 0;
+            display: block;
+            width: 100%;
+
+            input {
+                width: 100% !important;
+            }
         }
 
         @include breakpoint("large") {
             display: inline-block;
             margin-top: 1rem;
-            padding-right: spacing("half");
-            width: 50%;
-        }
-
-        &.pre-order-buttons {
-            @include breakpoint("small") {
-                min-width: 50%;
-                width: auto;
-            }
-
-            @include breakpoint("medium") {
-                margin-right: remCalc(11px);
-                min-width: auto;
-                padding: 0;
-                width: auto;
-            }
-
-            .button {
-                padding: remCalc(13px) remCalc(24px);
-            }
         }
 
         .button {
-            margin: 0;
             width: 100%;
-        }
-    }
 
-    .add-to-cart-wallet-buttons {
-        margin-top: spacing("half");
+            @include breakpoint("medium") {
+                width: auto;
+            }
 
-        div[data-smart-button-container-id] {
-            line-height: 0;
-            margin-top: 6px;
-
-            button,
-            div {
-                width: 100%;
+            @include breakpoint("large") {
+                margin-right: spacing("half");
             }
         }
 
-        button.show-more-button {
-            color: stencilColor("color-textSecondary");
-            display: block;
-            margin-top: spacing("quarter");
-            padding: spacing("quarter") 0;
-            text-align: center;
-            text-decoration: underline;
-            vertical-align: middle;
-            width: 100%;
-
-            &:hover {
-                color: stencilColor("color-textSecondary--hover");
-            }
+        .button--primary {
+            margin-right: spacing("half");
         }
     }
 }
@@ -474,5 +483,17 @@
     img {
         max-width: none;
         width: auto;
+    }
+}
+
+.socialLinks {
+    display: none;
+}
+
+.product-view-reviews-desktop {
+    display: none;
+
+    @include breakpoint("medium") {
+        display: block;
     }
 }

@@ -4,14 +4,16 @@
     </div>
     <ul class="navPages-list{{#if theme_settings.navigation_design '!==' 'simple'}} navPages-list-depth-max{{/if}}">
         {{#each categories}}
-            <li class="navPages-item">
-            {{#if ../theme_settings.navigation_design '===' 'simple'}}
-                {{> components/common/navigation-list}}
+            {{#if @index '>' -1}}
+                <li class="navPages-item">
+                {{#if ../theme_settings.navigation_design '===' 'simple'}}
+                    {{> components/common/navigation-list}}
+                {{/if}}
+                {{#if ../theme_settings.navigation_design '===' 'alternate'}}
+                    {{> components/common/navigation-list-alternate}}
+                {{/if}}
+                </li>
             {{/if}}
-            {{#if ../theme_settings.navigation_design '===' 'alternate'}}
-                {{> components/common/navigation-list-alternate}}
-            {{/if}}
-            </li>
         {{/each}}
         {{#unless theme_settings.hide_content_navigation}}
             {{#each pages}}
@@ -39,7 +41,7 @@
                     {{lang 'common.currency' code=currency_selector.active_currency_code}}
                     <i class="icon navPages-action-moreIcon" aria-hidden="true">
                         <svg>
-                            <use href="#icon-chevron-down"></use>
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-chevron-down"></use>
                         </svg>
                     </i>
                 </a>
@@ -66,11 +68,6 @@
                         {{/each}}
                     </ul>
                 </div>
-            </li>
-        {{/if}}
-        {{#if theme_settings.show_channels}}
-            <li class="navPages-item">
-                {{> components/common/channel-selector-mobile}}
             </li>
         {{/if}}
         {{#if settings.gift_certificates_enabled}}
@@ -111,7 +108,7 @@
                 >
                     {{lang 'common.account'}}
                     <i class="icon navPages-action-moreIcon" aria-hidden="true">
-                        <svg><use href="#icon-chevron-down" /></svg>
+                        <svg><use xlink:href="#icon-chevron-down" /></svg>
                     </i>
                 </a>
                 <div class="navPage-subMenu" id="navPages-account" aria-hidden="true" tabindex="-1">

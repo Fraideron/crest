@@ -1,0 +1,86 @@
+@import '../../global/ScreenSizes';
+@import '../../global/Colors';
+
+
+.release-banner-section {
+
+    .release-banner-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-size: cover;
+        margin: 50px 0;
+        padding: 18px 40px;
+        margin-right: calc(50% - 50vw);
+        margin-left: calc(50% - 50vw);
+        background-position: center;
+        position: relative;
+
+        &--img {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            height: 100%;
+            margin-right: calc(50% - 50vw);
+            margin-left: calc(50% - 50vw);
+            z-index: -1;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        @media (min-width: $desktop-screen-min-width) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        &--description {
+            padding: 18px 40px;
+            color: $white;
+            text-align: center;
+
+            @media (min-width: $desktop-screen-min-width) {
+                width: 50%;
+                text-align: left;
+
+            }
+
+            .release-title {
+                color: $white;
+                font-size: 32px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 110%;
+                letter-spacing: 2px;
+            }
+
+            .release-description {
+                color: $white;
+                margin: 24px 0;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 140%;
+            }
+
+            .release-button {
+                color: black;
+                padding: 10px 40px;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 24px;
+                letter-spacing: 1px;
+                text-decoration: none;
+                background-color: $white;
+            }
+        }
+
+        &--image {
+            display: none;
+
+            @media (min-width: $desktop-screen-min-width) {
+                display: block;
+            }
+        }
+    }
+}

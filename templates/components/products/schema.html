@@ -14,7 +14,7 @@
             "name": {{{JSONstringify product.brand.name}}}
         },
         {{/if}}
-        "description": {{{json (ellipsis (sanitize product.description) 4000) }}},
+        "description": "{{encodeURI (sanitize product.description)}}",
         "image": "{{getImage product.main_image 'zoom_size' (cdn theme_settings.default_image_product)}}",
         {{#and settings.show_product_reviews product.reviews.list.length}}
         "aggregateRating": {
@@ -28,7 +28,7 @@
                 "@type": "Review",
                 "author": {
                     "@type": "Person",
-                    "name": {{#if name}}{{{JSONstringify name}}}{{else}}{{{JSONstringify (lang 'products.reviews.anonymous_poster')}}}{{/if}}
+                    "name": {{{JSONstringify name}}}
                 },
                 "datePublished": "{{date}}",
                 "reviewBody": {{{JSONstringify text}}},

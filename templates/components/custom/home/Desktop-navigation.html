@@ -1,0 +1,97 @@
+<section class="desktop-nav-container">
+  <div class="desktop-nav-container--background"></div>
+  <nav class="desktop-navigation">
+    <div class="logo-section">
+      <a href="{{urls.home}}" class="" data-header-logo-link>
+        {{#if settings.store_logo.image}} {{#if theme_settings.logo_size '==='
+        'original'}}
+        <img class="header-logo-image-unknown-size" src="{{getImage settings.store_logo.image 'logo_size'}}"
+          alt="{{settings.store_logo.title}}" title="{{settings.store_logo.title}}" />
+        {{else}}
+        <div class="header-logo-image-container">
+          <img class="desktop-header-logo-image" src="{{getImage settings.store_logo.image 'logo_size'}}"
+            srcset="{{getImageSrcset1x2x settings.store_logo.image theme_settings.logo_size}}"
+            alt="{{settings.store_logo.title}}" title="{{settings.store_logo.title}}" />
+        </div>
+        {{/if}} {{else}}
+        <span class="header-logo-text">{{settings.store_logo.title}}</span>
+        {{/if}}
+      </a>
+    </div>
+
+
+
+
+    <ul class="categori-list">
+      {{#each categories}}
+          {{#each children}}
+            <li class="categori-items {{#if name '===''Wine'}} wine2 {{/if}} {{#if name '===''Spirits'}} Spirits2 {{/if}}">
+
+            <a href="{{url}}" class="menu_link">
+              <p class="categori-title">{{name}}</p>
+            </a>
+
+            <div class="sub-menu">
+              <ul class="sub_menu_list">
+                {{#each children}}
+                  {{#if name '===' 'Whiskey'}}
+                  {{else}}
+                    <li class="test {{#if name '===''Red'}} red2 {{/if}}">
+                      <a href="{{url}}" class="">
+                          <p class="">{{name}}</p>
+                      </a>
+
+                      <div class="second-sub-menu">
+
+                          <ul class="second-menu_list">
+                              {{#each children}}
+                              <li class="second-menu_item ">
+                                  <a href="{{url}}" class="second-sub-link">
+                                      <p class="">{{name}}</p>
+                                  </a>
+                              </li>
+                              {{/each}}
+                          </ul>
+
+                      </div>
+                  </li>
+                  {{/if}}
+                {{/each}}
+              </ul>
+            </div>
+
+          </li>
+          {{/each}}
+      {{/each}}
+    </ul>
+
+    <div class="link-section">
+      <ul class="desktop-navigation-list">
+          <li class="desktop-navigation-item">
+              <button id="customSearchIcon" ><img class="navigation-img" src="{{cdn 'img/Search.svg'}}" alt="" /></button>
+          </li>
+            <li class="desktop-navigation-item">
+              <a href="{{urls.account.index}}"><img class="navigation-img" src="{{cdn 'img/Heart.svg'}}" alt="" /></a>
+            </li>
+            <li class="desktop-navigation-item">
+              <a href="{{urls.wishlists.all}}"><img class="navigation-img" src="{{cdn 'img/Account.svg'}}" alt="" /></a>
+            </li>
+            <li class="desktop-navigation-item">
+              <a href="{{urls.cart}}"><img class="navigation-img" src="{{cdn 'img/Cart.svg'}}" alt="" /></a>
+            </li>
+      </ul>
+
+      <div class="desktop-wrapper-form">
+        <form class="desktop-form" action="{{urls.search}}">
+          <div class="desktop-form-search">
+            <input type="search" class="form-input" name="search_query" id="nav-menu-quick-search"
+              placeholder="Search store" autocomplete="of" />
+            <button class="desktop-serch-btn">
+              <img class="serch-img" src="{{cdn 'img/Search.svg'}}" alt="image" />
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </nav>
+</section>

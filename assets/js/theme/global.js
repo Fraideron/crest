@@ -10,12 +10,14 @@ import menu from './global/menu';
 import foundation from './global/foundation';
 import quickView from './global/quick-view';
 import cartPreview from './global/cart-preview';
+import privacyCookieNotification from './global/cookieNotification';
 import carousel from './common/carousel';
 import svgInjector from './global/svg-injector';
 
 export default class Global extends PageManager {
     onReady() {
-        const { cartId, secureBaseUrl } = this.context;
+        const { cartId, settings, secureBaseUrl } = this.context;
+
         cartPreview(secureBaseUrl, cartId);
         quickSearch();
         currencySelector(cartId);
@@ -24,6 +26,43 @@ export default class Global extends PageManager {
         carousel(this.context);
         menu();
         mobileMenuToggle();
+        privacyCookieNotification();
         svgInjector();
+
+        // this.isHeaderAbsolute();
+        this.showSearch();
+    }
+
+    isHomePage() {
+        return $('.release-banner-wrapper').length;
+    }
+
+    isHeaderAbsolute() {
+        if (this.isHomePage()) {
+            $('.desktop-nav-container').css('position', 'absolute');
+            console.log('home');
+        } else {
+            console.log('not home');
+            $('.desktop-nav-container').css('position', 'relative');
+            $('.desktop-nav-container').css('background', '2F241D');
+        }
+    }
+
+    httpGet(url, key) {
+        const xmlHttp = new XMLHttpRequest();
+        xmlHttp.open('GET', url, false);
+        xmlHttp.setRequestHeader('Authorization', key);
+        xmlHttp.send(null);
+        return xmlHttp.responseText;
+    }
+
+    showSearch() {
+        const searchToggle = document.querySelector('#customSearchIcon');
+        const desktopFormSearch = document.querySelector('.desktop-wrapper-form');
+        searchToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            desktopFormSearch.classList.toggle('active');
+        });
+    // desktop-form-search
     }
 }

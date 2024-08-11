@@ -62,12 +62,6 @@
         }
     }
 
-    .accordion-heading {
-        font-size: fontSize("base");
-        line-height: lineHeight("smaller");
-        margin: 0;
-    }
-
     .accordion-content {
         padding: $accordion-navList-padding;
 

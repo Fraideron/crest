@@ -230,7 +230,7 @@ export class Modal {
 
         if (this.focusTrap) this.focusTrap.deactivate();
 
-        if (this.$preModalFocusedEl) this.$preModalFocusedEl.trigger('focus');
+        if (this.$preModalFocusedEl) this.$preModalFocusedEl.focus();
 
         this.$preModalFocusedEl = null;
     }

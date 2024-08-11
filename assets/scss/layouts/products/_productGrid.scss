@@ -15,7 +15,8 @@
     @include u-listBullets("none");
     @include grid-row($behavior: "nest");
     font-size: 0; // 1
-    margin-bottom: spacing("single");
+
+    margin: 0 16px;
 
     .product {
         @include grid-column(6, $float: none);
@@ -43,6 +44,7 @@
 
 .page-sidebar + .page-content {
     .productGrid {
+      margin: 0 16px;
         .product { // 1
             @include breakpoint("small") {
                 width: grid-calc(4, $total-columns);

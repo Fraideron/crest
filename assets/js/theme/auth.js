@@ -111,8 +111,13 @@ export default class Auth extends PageManager {
         const validationModel = validation($createAccountForm, this.context);
         const createAccountValidator = nod({
             submit: `${this.formCreateSelector} input[type='submit']`,
-            delay: 900,
+            tap: announceInputErrorMessage,
         });
+
+        /* BundleB2B */
+        window.createAccountValidator = createAccountValidator;
+        /* BundleB2B */
+
         const $stateElement = $('[data-field-type="State"]');
         const emailSelector = `${this.formCreateSelector} [data-field-type='EmailAddress']`;
         const $emailElement = $(emailSelector);
@@ -170,22 +175,15 @@ export default class Auth extends PageManager {
             );
         }
 
-        $createAccountForm.on('submit', (event) => {
-            this.submitAction(event, createAccountValidator);
+        $createAccountForm.on('submit', event => {
+            createAccountValidator.performCheck();
+
+            if (createAccountValidator.areAll('valid')) {
+                return;
+            }
+
+            event.preventDefault();
         });
-    }
-
-    submitAction(event, validator) {
-        validator.performCheck();
-
-        if (validator.areAll('valid')) {
-            return;
-        }
-        event.preventDefault();
-        setTimeout(() => {
-            const earliestError = $('span.form-inlineMessage:first').prev('input');
-            earliestError.trigger('focus');
-        }, 900);
     }
 
     /**
@@ -219,5 +217,15 @@ export default class Auth extends PageManager {
         if ($createAccountForm.length) {
             this.registerCreateAccountValidator($createAccountForm);
         }
+
+      this.preselectInstitute()
+    }
+
+    preselectInstitute() {
+      const instituteId = localStorage.getItem('instituteId');
+      if (instituteId) {
+        $('#FormField_27_input').val(instituteId);
+        $('#FormField_27_input').prop( "disabled", true );
+      }
     }
 }
