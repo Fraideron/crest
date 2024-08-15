@@ -317,6 +317,9 @@
 // 1. Hardcoded intentionally for precise pixels.
 //
 // -----------------------------------------------------------------------------
+.cart-navigation-item {
+    position: relative;
+}
 
 .countPill {
     background-color: stencilColor("navUser-indicator-backgroundColor");
@@ -325,11 +328,73 @@
     display: none;
     font-size: fontSize("tiny");
     font-weight: fontWeight("bold");
-    height: 20px; // 1
+    height: 18px; // 1
     line-height: 20px; // 1
     margin-left: spacing("eighth");
     text-align: center;
-    width: 20px; // 1
+    width: 18px; // 1
+    position: absolute;
+    right: 37px;
+    bottom: 22px;
+    cursor: pointer;
+
+    @media (min-width: 801px) {
+        right: -3px;
+        bottom: 2px;
+    }
+}
+
+.account-navigation-item {
+    position: relative;
+
+    .login-marker {
+        display: block;
+        position: absolute;
+        height: 18px;
+        width: 18px;
+        font-size: 12px;
+        border-radius: 50%;
+        background-color: #333333;
+        color: #ffffff;
+        text-align: center;
+        right: 10px;
+        bottom: 18px;
+        cursor: pointer;
+
+        @media (min-width: 801px) {
+            right: -3px;
+            bottom: 2px;
+        }
+    }
+
+    .account-dropdown {
+        opacity: 0;
+        transform-origin: 0 0;
+        visibility: hidden;
+        transition: 0.3s linear;
+
+        .dropdown-lists {
+            list-style: none;
+            margin: 0;
+            padding: 12px;
+            background-color: #ffffff;
+            position: absolute;
+            width: 80px;
+            right: -5px;
+            bottom: -115px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+    }
+}
+
+.desktop-navigation-list {
+    .open-dropdown-wraper {
+        .account-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: rotateX(0deg);
+        }
+    }
 }
 
 .countPill--positive {

@@ -23,9 +23,42 @@
       </a>
 
       <ul class="navigation-list">
-        <li class="navigation-item"><a href="{{urls.account.index}}"><img class="navigation-img" src="{{cdn 'img/Heart.svg'}}" alt=""><p class="navigation-text">WISH</p></a></li>
-        <li class="navigation-item"><a href="{{urls.wishlists.all}}"><img class="navigation-img" src="{{cdn 'img/Account.svg'}}" alt=""><p class="navigation-text">Account</p></a></li>
-        <li class="navigation-item"><a href="{{urls.cart}}"><img class="navigation-img" src="{{cdn 'img/Cart.svg'}}" alt=""><p class="navigation-text">Cart</p></a></li>
+        <li class="navigation-item">
+          {{#if customer}}
+              <a href="{{urls.account.wishlists.all}}">
+                <img class="navigation-img" src="{{cdn 'img/Heart.svg'}}" alt="" />
+                <p class="navigation-text">WISH</p>
+              </a>
+            {{else}}
+              <a href="{{urls.auth.login}}">
+                <img class="navigation-img" src="{{cdn 'img/Heart.svg'}}" alt="" />
+                <p class="navigation-text">WISH</p>
+              </a>
+          {{/if}}
+        </li>
+        <li class="navigation-item account-navigation-item">
+          {{#if customer}}
+            <a href="{{urls.account.index}}"><img class="navigation-img" src="{{cdn 'img/Account.svg'}}" alt="" />
+              <p class="navigation-text">Account</p>
+              <span class="login-marker">&#10004;</span>
+            </a>
+            <div class="account-dropdown">
+              <ul class="dropdown-lists">
+                <li><a href="{{urls.account.index}}">{{lang 'common.account'}}</a></li>
+                <li><a href="{{urls.auth.logout}}">{{lang 'common.logout'}}</a></li>
+              </ul>
+            </div>
+          {{else}}
+            <a href="{{urls.auth.login}}"><img class="navigation-img" src="{{cdn 'img/Account.svg'}}" alt="" /><p class="navigation-text">Account</p></a>
+          {{/if}}
+        </li>
+        <li class="navigation-item">
+          <a href="{{urls.cart}}">
+            <img class="navigation-img" src="{{cdn 'img/Cart.svg'}}" alt="">
+            <p class="navigation-text">Cart</p>
+            <span class="countPill cart-quantity"></span>
+          </a>
+        </li>
       </ul>
 
 
