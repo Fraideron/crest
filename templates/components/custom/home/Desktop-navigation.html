@@ -68,13 +68,31 @@
               <button id="customSearchIcon" ><img class="navigation-img" src="{{cdn 'img/Search.svg'}}" alt="" /></button>
           </li>
             <li class="desktop-navigation-item">
-              <a href="{{urls.account.index}}"><img class="navigation-img" src="{{cdn 'img/Heart.svg'}}" alt="" /></a>
+              {{#if customer}}
+                  <a href="{{urls.account.wishlists.all}}"><img class="navigation-img" src="{{cdn 'img/Heart.svg'}}" alt="" /></a>
+                {{else}}
+                  <a href="{{urls.auth.login}}"><img class="navigation-img" src="{{cdn 'img/Heart.svg'}}" alt="" /></a>
+              {{/if}}
             </li>
-            <li class="desktop-navigation-item">
-              <a href="{{urls.wishlists.all}}"><img class="navigation-img" src="{{cdn 'img/Account.svg'}}" alt="" /></a>
+            <li class="desktop-navigation-item account-navigation-item">
+              {{#if customer}}
+                  <a href="{{urls.account.index}}"><img class="navigation-img" src="{{cdn 'img/Account.svg'}}" alt="" />
+                    <span class="login-marker">&#10004;</span>
+                  </a>
+                  <div class="account-dropdown">
+                    <ul class="dropdown-lists">
+                      <li><a href="{{urls.account.index}}">{{lang 'common.account'}}</a></li>
+                      <li><a href="{{urls.auth.logout}}">{{lang 'common.logout'}}</a></li>
+                    </ul>
+                  </div>
+                {{else}}
+                  <a href="{{urls.auth.login}}"><img class="navigation-img" src="{{cdn 'img/Account.svg'}}" alt="" /></a>
+              {{/if}}
             </li>
-            <li class="desktop-navigation-item">
-              <a href="{{urls.cart}}"><img class="navigation-img" src="{{cdn 'img/Cart.svg'}}" alt="" /></a>
+            <li class="desktop-navigation-item cart-navigation-item">
+              <a href="{{urls.cart}}"><img class="navigation-img" src="{{cdn 'img/Cart.svg'}}" alt="" />
+                <span class="countPill cart-quantity"></span>
+              </a>
             </li>
       </ul>
 
@@ -92,3 +110,32 @@
     </div>
   </nav>
 </section>
+<script>
+  (() => {
+    const accountDropdown = document.querySelector('.account-dropdown');
+    const desktopNavigationItem = document.querySelectorAll('.desktop-navigation-item');
+
+    if (accountDropdown) {
+      desktopNavigationItem.forEach(item => {
+        item.onmouseover = () => {
+          desktopNavigationItem.forEach(elem => {
+            if(elem.classList.contains('open-dropdown-wraper')) {
+              elem.classList.remove('open-dropdown-wraper');
+            }
+          })
+          if(!item.classList.contains('open-dropdown-wraper')) {
+            item.classList.add('open-dropdown-wraper');
+          }
+        };
+      });
+
+      accountDropdown.onmouseout = () => {
+        desktopNavigationItem.forEach(elem => {
+          if(elem.classList.contains('open-dropdown-wraper')) {
+            elem.classList.remove('open-dropdown-wraper');
+          }
+        })
+      };
+    }
+  })()
+</script>
