@@ -1,0 +1,54 @@
+{
+  "name": "ReleaseBanner",
+  "schema": [
+    {
+      "type": "tab",
+      "label": "Settings",
+      "sections": [
+        {
+          "label": "Image",
+          "settings": [
+            {
+              "type": "imageManager",
+              "id": "release-banner-img",
+              "default": {
+                "src": "https://via.placeholder.com/600x400",
+                "type": "IMAGE_MANAGER"
+              }
+            },
+            {
+              "type": "imageManager",
+              "id": "release-banner-img1",
+              "default": {
+                "src": "https://via.placeholder.com/600x400/FFC425",
+                "type": "IMAGE_MANAGER"
+              }
+            },
+            {
+              "type": "input",
+              "label": "Title",
+              "id": "release-banner-title",
+              "default": "NEW CREST BARRELL RELEASE"
+            },
+            {
+              "type": "input",
+              "label": "Body",
+              "id": "release-banner-description",
+              "default": "To change this text. Go to: Admin => Storefront => Themes => Customize => Select widget => Change text on the sidebar"
+            },
+            {
+              "type": "input",
+              "label": "Button Text",
+              "id": "release-banner-button-text",
+              "default": "SHOP NOW"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "template": "<style>\n  [data-id=\"{{_.id}}\"].release-banner-section {\n    .release-banner-wrapper {\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      justify-content: center;\n      background-size: cover;\n      margin: 50px 0;\n      padding: 18px 40px;\n      margin-right: calc(50% - 50vw);\n      margin-left: calc(50% - 50vw);\n      background-position: center;\n      position: relative;\n\n      .release-banner-wrapper--img {\n        position: absolute;\n        width: 100%;\n        left: 0;\n        height: 100%;\n        margin-right: calc(50% - 50vw);\n        margin-left: calc(50% - 50vw);\n        z-index: -1;\n        object-fit: cover;\n        width: 100%;\n      }\n\n      @media (min-width: 800px) {\n        flex-direction: row;\n        justify-content: space-between;\n      }\n\n      .release-banner-wrapper--description {\n        padding: 18px 40px;\n        color: #ffffff;\n        text-align: center;\n\n        @media (min-width: 800px) {\n          width: 50%;\n          text-align: left;\n\n        }\n\n        .release-title {\n          color: #ffffff;\n          font-size: 32px;\n          font-style: normal;\n          font-weight: 700;\n          line-height: 110%;\n          letter-spacing: 2px;\n        }\n\n        .release-description {\n          color: #ffffff;\n          margin: 24px 0;\n          font-size: 20px;\n          font-style: normal;\n          font-weight: 700;\n          line-height: 140%;\n        }\n\n        .release-button {\n          color: black;\n          padding: 10px 40px;\n          font-size: 14px;\n          font-weight: 400;\n          line-height: 24px;\n          letter-spacing: 1px;\n          text-decoration: none;\n          background-color: #ffffff;\n        }\n      }\n\n      .release-banner-wrapper--image {\n        display: none;\n\n        @media (min-width: 800px) {\n          display: block;\n        }\n      }\n    }\n  }\n\n</style>\n\n\n<div class=\"release-banner-section\" data-id=\"{{_.id}}\">\n    <div class=\"release-banner-wrapper\">\n        {{#if release-banner-img.src}}\n            <img class=\"release-banner-wrapper--img\" src=\"{{release-banner-img.src}}\">\n        {{/if}}\n\n        <div class=\"release-banner-wrapper--description\">\n            <h3 class=\"release-title\">\n                {{release-banner-title}}\n            </h3>\n            <p class=\"release-description\">\n                {{release-banner-description}}\n            </p>\n            <a href=\"#\" class=\"release-button\">\n                {{release-banner-button-text}}\n            </a>\n        </div>\n        \n        <div class=\"release-banner-wrapper--image\">\n            {{#if release-banner-img1.src}}\n                <img src=\"{{release-banner-img1.src}}\" alt=\"release-banner\">\n            {{/if}}\n        </div>\n    </div>\n</div>\n\n"
+}
+
+
+//"uuid": "c298418a-1da1-444c-bb5e-51659c65c3ac",

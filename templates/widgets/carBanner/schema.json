@@ -1,0 +1,40 @@
+{
+  "name": "CarBanner",
+  "schema": [
+    {
+      "type": "tab",
+      "label": "Settings",
+      "sections": [
+        {
+          "label": "Image",
+          "settings": [
+            {
+              "type": "imageManager",
+              "id": "imageUrl",
+              "default": {
+                "src": "https://via.placeholder.com/600x400",
+                "type": "IMAGE_MANAGER"
+              }
+            },
+            {
+              "type": "input",
+              "label": "Title",
+              "id": "car-banner-title",
+              "default": "It’s all about you"
+            },
+            {
+              "type": "input",
+              "label": "Body",
+              "id": "car-banner-body",
+              "default": "To change this text. Go to: Admin => Storefront => Themes => Customize => Select widget => Change text on the sidebar"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "template": "<style>\n  [data-id=\"{{_.id}}\"].car-banner-section {\n    .car-banner-wrapper {\n      padding: 18px 42px;\n      background-color: #2F241D;\n      margin: 50px 0;\n      margin-right: calc(50% - 50vw);\n      margin-left: calc(50% - 50vw);\n\n      @media (min-width: 800px) {\n        display: grid;\n        grid-template-columns: calc(50% + 100px) calc(50% - 100px);\n        position: relative;\n        padding: 0;\n        height: 400px;\n      }\n\n      .car-banner-wrapper--description {\n        color: #FFFFFF;\n\n        @media (min-width: 800px) {\n          padding: 18px 42px;\n          text-align: left;\n        }\n\n        .car-banner-title {\n          color: #FFFFFF;\n          font-size: 16px;\n          font-weight: 700;\n          line-height: 110%;\n          letter-spacing: 2px;\n          text-align: center;\n\n          @media (min-width: 800px) {\n            text-align: left;\n            font-size: 32px;\n            margin-bottom: 24px;\n          }\n        }\n\n        .car-banner-description {\n          display: none;\n          width: 350px;\n\n          @media (min-width: 800px) {\n            display: block;\n            font-size: 20px;\n          }\n\n          @media (min-width: 1200px) {\n            width: 400px;\n          }\n        }\n      }\n\n      .car-banner-wrapper--empty {\n        background-color: #FFC425;\n      }\n\n      .car-banner-wrapper--banner {\n        margin: 16px 0;\n        position: inherit;\n\n        @media (min-width: 800px) {\n          position: absolute;\n          width: 50%;\n          max-width: 700px;\n          right: 20px;\n          top: 40px;\n        }\n\n        @media (min-width: 1100px) {\n          width: 60%;\n          right: 30px;\n        }\n\n      }\n\n      .car-banner-description-mobile {\n        color: #FFFFFF;\n        margin-top: 16px;\n        text-align: center;\n\n        @media (min-width: 800px) {\n          display: none;\n        }\n      }\n    }\n  }\n</style>\n\n<div class=\"car-banner-section\" data-id=\"{{_.id}}\">\n    <div class=\"car-banner-wrapper\">\n        <div class=\"car-banner-wrapper--description\">\n            <h3 class=\"car-banner-title\">{{car-banner-title}}</h3>\n            <p class=\"car-banner-description\">{{car-banner-body}}</p>\n        </div>\n        <div class=\"car-banner-wrapper--empty\"></div>\n        {{#if imageUrl.src}}\n            <img class=\"car-banner-wrapper--banner\" src=\"{{imageUrl.src}}\" alt=\"\">\n        {{/if}}\n        <p class=\"car-banner-description-mobile\">{{car-banner-body}}</p>\n    </div>\n</div>\n"
+}
+
+
+//  "uuid": "64716e7d-2546-491f-9f2f-c9dfb7855cbe",
